@@ -13,7 +13,7 @@ buska=$(echo $MEMORY | cut -d'%' -f1 | awk -F. '{print $1}')
 tuska=$(echo $DISK | cut -d'%' -f1)
 chuska=$(echo $CPU | cut -d'%' -f1 | awk -F. '{print $1}')
 if [ "$buska" -ge "$LIMIT_MEMORY" -o "$chuska" -ge "$LIMIT_CPU" -o "$tuska" -ge "$LIMIT_DISK" ];then
-echo "APNA CODE YAHA DAALDE MAIL KA"
+echo "Memory/Cpu/Disk has crossed threshold value. Please check!" | mail -v -s "ALERT!" majiddeshmukh1@gmail.com
 fi
 sleep 1
 done
